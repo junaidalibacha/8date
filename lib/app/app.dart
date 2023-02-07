@@ -1,11 +1,13 @@
 import 'package:eight_date_app/presentation/src/index.dart';
 import 'package:eight_date_app/presentation/views_models/register_view_model/register_view_model.dart';
+import 'package:eight_date_app/presentation/views_models/sign_up_view_model/sign_up_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../presentation/routes/routes.dart';
 import '../presentation/theme/theme_manager.dart';
+import '../presentation/views_models/phone_verification_view_model/phone_verification_view_model.dart';
 
 class MyApp extends StatelessWidget {
   // const MyApp({super.key});
@@ -18,6 +20,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (ctx) => RegisterViewModel()),
+        ChangeNotifierProvider(create: (ctx) => PhoneVerificationViewModel()),
+        ChangeNotifierProvider(create: (ctx) => SignUpViewModel()),
       ],
       child: GetMaterialApp(
         builder: (context, child) {

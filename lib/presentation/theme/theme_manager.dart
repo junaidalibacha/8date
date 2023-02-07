@@ -20,5 +20,6 @@ ThemeData getAppTheme(BuildContext context) {
     // buttonTheme: GetButtonTheme.appButtonTheme(),
     textButtonTheme: GetButtonTheme.textButtonThemeData(),
     elevatedButtonTheme: GetButtonTheme.elevatedButtonTheme(),
+    inputDecorationTheme: getInputDecoration(),
   );
 }

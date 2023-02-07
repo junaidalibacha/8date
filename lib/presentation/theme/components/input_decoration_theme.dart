@@ -6,7 +6,7 @@ InputDecorationTheme getInputDecoration() {
   return InputDecorationTheme(
     contentPadding: const EdgeInsets.all(AppPadding.p8),
     hintStyle: TextStyleManager.regularTextStyle(
-      color: ColorManager.grey1,
+      color: ColorManager.grey,
     ),
     labelStyle: TextStyleManager.mediumTextStyle(
       color: ColorManager.darkGrey,
@@ -14,9 +14,9 @@ InputDecorationTheme getInputDecoration() {
     errorStyle: TextStyleManager.regularTextStyle(
       color: ColorManager.error,
     ),
-    enabledBorder: OutlineInputBorderStyle.getEnabledBorder(),
-    focusedBorder: OutlineInputBorderStyle.getFocusBorder(),
-    errorBorder: OutlineInputBorderStyle.getErrorBorder(),
-    focusedErrorBorder: OutlineInputBorderStyle.getFocusedErrorBorder(),
+    // enabledBorder: UnderLineInptBorderStyle.getEnabledBorder(),
+    // focusedBorder: UnderLineInptBorderStyle.getFocusBorder(),
+    // errorBorder: UnderLineInptBorderStyle.getErrorBorder(),
+    // focusedErrorBorder: UnderLineInptBorderStyle.getFocusedErrorBorder(),
   );
 }

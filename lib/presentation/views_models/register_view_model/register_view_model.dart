@@ -7,7 +7,7 @@ class RegisterViewModel extends ChangeNotifier {
   CountryCode? countryCode;
   var phoneNumber = '';
 
-  void ontap(BuildContext context) async {
+  void onSelect(BuildContext context) async {
     final code = await countryPickeer.showPicker(context: context);
     countryCode = code;
     notifyListeners();
@@ -17,6 +17,14 @@ class RegisterViewModel extends ChangeNotifier {
     phoneNumber = value;
     notifyListeners();
   }
+
+  // String? validate(var value) {
+  //   if (value == null || value.isEmpty || value.length < 10) {
+  //     return 'Please enter a valid number';
+  //   }
+  //   notifyListeners();
+  //   return null;
+  // }
 }
 
 // class RegisterBinding implements Bindings {

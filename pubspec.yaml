@@ -40,7 +40,10 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^4.0.3
   fl_country_code_picker: ^0.0.1
-
+  flutter_pin_code_fields: ^1.2.0
+  flutter_holo_date_picker: ^1.1.0
+  intl: ^0.18.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

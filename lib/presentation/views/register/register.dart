@@ -60,15 +60,8 @@ class RegisterView extends StatelessWidget {
           style: TextStyleManager.regularTextStyle(
             fontSize: getProportionateScreenHeight(40),
           ),
-          validator: (value) {
-            if (value == null || value.isEmpty || value.length < 10) {
-              return 'Please enter a valid email';
-            }
-            return null;
-          },
-          onChanged: (newValue) {
-            viewModel.onChange(newValue);
-          },
+          // validator: (value) => viewModel.validate(value),
+          onChanged: (newValue) => viewModel.onChange(newValue),
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
               vertical: getProportionateScreenHeight(10),
@@ -85,7 +78,7 @@ class RegisterView extends StatelessWidget {
       RegisterViewModel viewModel, BuildContext context) {
     return GestureDetector(
       onTap: () {
-        viewModel.ontap(context);
+        viewModel.onSelect(context);
       },
       child: Container(
         decoration: const BoxDecoration(

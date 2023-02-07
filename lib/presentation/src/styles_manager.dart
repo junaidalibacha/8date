@@ -119,3 +119,41 @@ class OutlineInputBorderStyle {
     );
   }
 }
+
+class UnderLineInptBorderStyle {
+  static UnderlineInputBorder _getUnderLineInputBorder({
+    Color color = Colors.grey,
+    double width = AppSize.s1_5,
+  }) {
+    return UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: color,
+        width: width,
+      ),
+    );
+  }
+
+  static UnderlineInputBorder getEnabledBorder() {
+    return _getUnderLineInputBorder(
+      color: ColorManager.grey,
+    );
+  }
+
+  static UnderlineInputBorder getFocusBorder() {
+    return _getUnderLineInputBorder(
+      color: ColorManager.white,
+    );
+  }
+
+  static UnderlineInputBorder getErrorBorder() {
+    return _getUnderLineInputBorder(
+      color: ColorManager.error,
+    );
+  }
+
+  static UnderlineInputBorder getFocusedErrorBorder() {
+    return _getUnderLineInputBorder(
+      color: ColorManager.error,
+    );
+  }
+}

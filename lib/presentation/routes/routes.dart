@@ -1,4 +1,5 @@
 import 'package:eight_date_app/presentation/views/phone_verification/phone_verification.dart';
+import 'package:eight_date_app/presentation/views/sign_up/sign_up_view.dart';
 import 'package:flutter/material.dart';
 
 import '../src/index.dart';
@@ -10,6 +11,7 @@ class Routes {
   static const String mainRoute = '/mainRoute';
   static const String registerRoute = '/register';
   static const String phoneVerificationRoute = '/phoneVerification';
+  static const String signUpRoute = '/signUp';
 }
 
 class RoutesGenerator {
@@ -17,15 +19,17 @@ class RoutesGenerator {
     switch (routeSettings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
-      case Routes.phoneVerificationRoute:
-        return MaterialPageRoute(builder: (_) => const PhoneVarification());
       case Routes.registerRoute:
         return MaterialPageRoute(builder: (_) => const RegisterView());
+      case Routes.phoneVerificationRoute:
+        return MaterialPageRoute(builder: (_) => const PhoneVarificationView());
+      case Routes.signUpRoute:
+        return MaterialPageRoute(builder: (_) => const SignUpView());
     }
-    return _undefinedRoute();
+    return _unDefinedRoute();
   }
 
-  static Route<dynamic> _undefinedRoute() {
+  static Route<dynamic> _unDefinedRoute() {
     return MaterialPageRoute(
       builder: (_) => Scaffold(
         appBar: AppBar(
