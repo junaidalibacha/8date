@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../../app/index.dart';
 
 class SizeConfig {
@@ -43,6 +41,6 @@ SizedBox buildVerticleSpace(double height) {
 
 SizedBox buildHorizontalSpace(double width) {
   return SizedBox(
-    height: getProportionateScreenWidth(width),
+    width: getProportionateScreenWidth(width),
   );
 }

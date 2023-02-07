@@ -12,6 +12,7 @@ class SignUpViewModel extends ChangeNotifier {
   var lastName = '';
   var email = '';
   DateTime birthDay = DateTime.now();
+  bool? notificationAccess;
 
   List<Widget> get bodyList => const [
         NameView(),
@@ -51,4 +52,11 @@ class SignUpViewModel extends ChangeNotifier {
   String get getMonth => DateFormat('MMMMd')
       .format(DateTime(0, birthDay.month, birthDay.day))
       .toString();
+
+  void getNotiAccess(bool value) {
+    notificationAccess = value;
+    notifyListeners();
+  }
 }
+
+enum Notification { enable, disable }

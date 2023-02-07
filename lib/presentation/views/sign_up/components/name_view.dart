@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import '../../../../app/index.dart';
-import '../../../src/index.dart';
 import '../../../views_models/sign_up_view_model/sign_up_view_model.dart';
-import 'TextFieldWidget.dart';
+import 'textfield_widget.dart';
 
 class NameView extends StatelessWidget {
   const NameView({

@@ -6,39 +6,53 @@ class Constant {
   // static const String token = 'get API token here';
 }
 
-Text kText24(String text) {
+Text kText20(String text, {TextAlign? textAlign}) {
+  return Text(
+    text,
+    style: TextStyleManager.mediumTextStyle(
+      fontSize: getProportionateScreenHeight(20),
+    ),
+    textAlign: textAlign,
+  );
+}
+
+Text kText24(String text, {TextAlign? textAlign}) {
   return Text(
     text,
     style: TextStyleManager.mediumTextStyle(
       fontSize: getProportionateScreenHeight(24),
     ),
+    textAlign: textAlign,
   );
 }
 
-Text kText32(String text) {
+Text kText32(String text, {TextAlign? textAlign}) {
   return Text(
     text,
     style: TextStyleManager.mediumTextStyle(
       fontSize: getProportionateScreenHeight(32),
     ),
+    textAlign: textAlign,
   );
 }
 
-Text kText40(String text) {
+Text kText40(String text, {TextAlign? textAlign}) {
   return Text(
     text,
     style: TextStyleManager.mediumTextStyle(
       fontSize: getProportionateScreenHeight(40),
     ),
+    textAlign: textAlign,
   );
 }
 
-Text kText100(String text) {
+Text kText100(String text, {TextAlign? textAlign}) {
   return Text(
     text,
     style: TextStyleManager.mediumTextStyle(
       fontSize: getProportionateScreenHeight(100),
     ),
+    textAlign: textAlign,
   );
 }
 

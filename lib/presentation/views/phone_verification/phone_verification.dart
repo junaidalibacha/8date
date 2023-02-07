@@ -1,12 +1,8 @@
 import 'package:eight_date_app/app/index.dart';
 import 'package:eight_date_app/presentation/common/index.dart';
 import 'package:eight_date_app/presentation/routes/routes.dart';
-import 'package:eight_date_app/presentation/src/index.dart';
 import 'package:eight_date_app/presentation/views_models/phone_verification_view_model/phone_verification_view_model.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
-import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
 class PhoneVarificationView extends StatelessWidget {
   const PhoneVarificationView({super.key});

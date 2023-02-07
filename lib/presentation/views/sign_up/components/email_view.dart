@@ -1,9 +1,7 @@
 import 'package:eight_date_app/app/index.dart';
 import 'package:eight_date_app/presentation/views_models/sign_up_view_model/sign_up_view_model.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import 'TextFieldWidget.dart';
+import 'textfield_widget.dart';
 
 class EmailView extends StatelessWidget {
   const EmailView({

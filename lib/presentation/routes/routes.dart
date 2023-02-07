@@ -1,4 +1,5 @@
 import 'package:eight_date_app/presentation/views/phone_verification/phone_verification.dart';
+import 'package:eight_date_app/presentation/views/sign_up/components/enable_notification_view.dart';
 import 'package:eight_date_app/presentation/views/sign_up/sign_up_view.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class Routes {
   static const String registerRoute = '/register';
   static const String phoneVerificationRoute = '/phoneVerification';
   static const String signUpRoute = '/signUp';
+  static const String enableNotificationRoute = '/enableNotification';
 }
 
 class RoutesGenerator {
@@ -25,6 +27,9 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const PhoneVarificationView());
       case Routes.signUpRoute:
         return MaterialPageRoute(builder: (_) => const SignUpView());
+      case Routes.enableNotificationRoute:
+        return MaterialPageRoute(
+            builder: (_) => const EnableNotificationView());
     }
     return _unDefinedRoute();
   }
