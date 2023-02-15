@@ -1,12 +1,9 @@
 import 'package:eight_date_app/app/index.dart';
-import 'package:eight_date_app/presentation/src/index.dart';
 import 'package:eight_date_app/presentation/views_models/sign_up_view_model/sign_up_view_model.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_holo_date_picker/flutter_holo_date_picker.dart';
-import 'package:provider/provider.dart';
 
-class BirthDayView extends StatelessWidget {
-  const BirthDayView({
+class SelectBirthDayView extends StatelessWidget {
+  const SelectBirthDayView({
     Key? key,
   }) : super(key: key);
 

@@ -6,6 +6,26 @@ class Constant {
   // static const String token = 'get API token here';
 }
 
+Text kText13(String text, {TextAlign? textAlign}) {
+  return Text(
+    text,
+    style: TextStyleManager.mediumTextStyle(
+      fontSize: getProportionateScreenHeight(13),
+    ),
+    textAlign: textAlign,
+  );
+}
+
+Text kText16(String text, {TextAlign? textAlign}) {
+  return Text(
+    text,
+    style: TextStyleManager.mediumTextStyle(
+      fontSize: getProportionateScreenHeight(16),
+    ),
+    textAlign: textAlign,
+  );
+}
+
 Text kText20(String text, {TextAlign? textAlign}) {
   return Text(
     text,

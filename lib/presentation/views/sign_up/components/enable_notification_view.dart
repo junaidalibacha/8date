@@ -49,7 +49,10 @@ class EnableNotificationView extends StatelessWidget {
         ),
       ),
       floatingActionButton: CircleButtonWidget(
-          onTap: viewModel.notificationAccess == null ? null : () {}),
+        onTap: viewModel.notificationAccess == null
+            ? null
+            : () => Get.toNamed(Routes.selectCityRoute),
+      ),
     );
   }
 }

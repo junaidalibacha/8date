@@ -36,7 +36,7 @@ class SignUpView extends StatelessWidget {
                         showDialog(
                           context: context,
                           builder: (context) {
-                            return const BdConfirmationView();
+                            return const BdayConfirmationView();
                           },
                         );
                       },

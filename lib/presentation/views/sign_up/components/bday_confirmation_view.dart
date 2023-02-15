@@ -2,8 +2,8 @@ import 'package:eight_date_app/app/index.dart';
 
 import '../../../views_models/sign_up_view_model/sign_up_view_model.dart';
 
-class BdConfirmationView extends StatelessWidget {
-  const BdConfirmationView({
+class BdayConfirmationView extends StatelessWidget {
+  const BdayConfirmationView({
     Key? key,
   }) : super(key: key);
 

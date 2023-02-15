@@ -1,9 +1,10 @@
-import 'package:eight_date_app/presentation/views/sign_up/components/birthday_view.dart';
 import 'package:eight_date_app/presentation/views/sign_up/components/email_view.dart';
 import 'package:eight_date_app/presentation/views/sign_up/components/name_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import '../../views/sign_up/components/select_birthday_view.dart';
 
 class SignUpViewModel extends ChangeNotifier {
   SignUpViewModel();
@@ -11,13 +12,67 @@ class SignUpViewModel extends ChangeNotifier {
   var firstName = '';
   var lastName = '';
   var email = '';
+
   DateTime birthDay = DateTime.now();
   bool? notificationAccess;
+
+  final List<String> cities = [
+    'los angeles',
+    'new york',
+    'miami',
+    'chicago',
+    'london',
+  ];
+  final List<String> genders = [
+    'man',
+    'women',
+    'other',
+  ];
+  final List<String> interests = [
+    'travel',
+    'golf',
+    'animals',
+    'dance',
+    'travel',
+    'golf',
+    'animals',
+    'dance',
+    'travel',
+    'golf',
+    'animals',
+    'dance',
+  ];
+
+  // List<String> get cities => ;
+
+  Object? city;
+  ValueChanged<Object?> selectCiy() {
+    return (value) {
+      city = value;
+      notifyListeners();
+    };
+  }
+
+  Object? gender;
+  ValueChanged<Object?> selectGender() {
+    return (value) {
+      gender = value;
+      notifyListeners();
+    };
+  }
+
+  Object? datingGender;
+  ValueChanged<Object?> selectDatingGender() {
+    return (value) {
+      datingGender = value;
+      notifyListeners();
+    };
+  }
 
   List<Widget> get bodyList => const [
         NameView(),
         EmailView(),
-        BirthDayView(),
+        SelectBirthDayView(),
       ];
 
   void next() {
