@@ -1,4 +1,5 @@
 import 'package:eight_date_app/presentation/src/index.dart';
+import 'package:eight_date_app/presentation/views_models/membership_view_model/membership_view_model.dart';
 import 'package:eight_date_app/presentation/views_models/profile_view_model/profile_view_model.dart';
 import 'package:eight_date_app/presentation/views_models/register_view_model/register_view_model.dart';
 import 'package:eight_date_app/presentation/views_models/sign_up_view_model/sign_up_view_model.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (ctx) => PhoneVerificationViewModel()),
         ChangeNotifierProvider(create: (ctx) => SignUpViewModel()),
         ChangeNotifierProvider(create: (ctx) => ProfileViewModel()),
+        ChangeNotifierProvider(create: (ctx) => MembershipViewModel()),
       ],
       child: GetMaterialApp(
         builder: (context, child) {
@@ -33,8 +35,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // theme: getAppTheme(context),
         onGenerateRoute: RoutesGenerator.getRoute,
-        // initialRoute: Routes.splashRoute,
-        initialRoute: Routes.enableNotificationRoute,
+        initialRoute: Routes.splashRoute,
+        // initialRoute: Routes.enableNotificationRoute,
       ),
     );
   }

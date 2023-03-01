@@ -1,9 +1,11 @@
+import 'package:eight_date_app/presentation/views/membership/congrat_view.dart';
 import 'package:eight_date_app/presentation/views/phone_verification/phone_verification.dart';
 import 'package:eight_date_app/presentation/views/profile/add_bio_view.dart';
 import 'package:eight_date_app/presentation/views/profile/add_insta_name.dart';
 import 'package:eight_date_app/presentation/views/profile/add_interest_view.dart';
 import 'package:eight_date_app/presentation/views/profile/add_profile_pic_view.dart';
 import 'package:eight_date_app/presentation/views/profile/final_view.dart';
+import 'package:eight_date_app/presentation/views/profile/under_review.dart';
 import 'package:eight_date_app/presentation/views/sign_up/components/index.dart';
 import 'package:eight_date_app/presentation/views/sign_up/sign_up_view.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +33,10 @@ class Routes {
   static const String addInterestRoute = '/addInterest';
   static const String addInstaNameRoute = '/addInstaName';
   static const String signUpFinalRoute = '/signUpFinal';
+  static const String underReviewRoute = '/underReview';
+
+  // Membership views
+  static const String congratsRoute = '/congrats';
 }
 
 class RoutesGenerator {
@@ -66,6 +72,12 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const AddInstaNameView());
       case Routes.signUpFinalRoute:
         return MaterialPageRoute(builder: (_) => const SingUpFinalView());
+      case Routes.underReviewRoute:
+        return MaterialPageRoute(builder: (_) => const UnderReview());
+
+      // membership
+      case Routes.congratsRoute:
+        return MaterialPageRoute(builder: (_) => const CongratsView());
     }
     return _unDefinedRoute();
   }

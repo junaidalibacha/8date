@@ -56,6 +56,16 @@ Text kText32(String text, {TextAlign? textAlign}) {
   );
 }
 
+Text kText36(String text, {TextAlign? textAlign}) {
+  return Text(
+    text,
+    style: TextStyleManager.mediumTextStyle(
+      fontSize: getProportionateScreenHeight(36),
+    ),
+    textAlign: textAlign,
+  );
+}
+
 Text kText40(String text, {TextAlign? textAlign}) {
   return Text(
     text,

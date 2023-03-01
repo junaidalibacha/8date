@@ -1,4 +1,5 @@
 import 'package:eight_date_app/app/index.dart';
+import 'package:eight_date_app/presentation/views/profile/under_review.dart';
 
 class SingUpFinalView extends StatelessWidget {
   const SingUpFinalView({super.key});
@@ -23,7 +24,9 @@ class SingUpFinalView extends StatelessWidget {
           padding: EdgeInsets.zero,
           shape: const BeveledRectangleBorder(),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Get.to(const UnderReview());
+        },
         child: kText20('Submit profile'),
       ),
     );
