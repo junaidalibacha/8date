@@ -1,11 +1,15 @@
+import 'dart:convert';
+
 import 'package:eight_date_app/app/index.dart';
 import 'package:eight_date_app/presentation/common/circle_button.dart';
+import 'package:eight_date_app/presentation/views_models/add_profile_view_model/add_profile_view_model.dart';
 
 class AddProfilePicView extends StatelessWidget {
   const AddProfilePicView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = Provider.of<AddProfileViewModel>(context);
     // bool showFloatButton = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -28,21 +32,27 @@ class AddProfilePicView extends StatelessWidget {
                 mainAxisSpacing: getProportionateScreenHeight(8),
                 crossAxisSpacing: getProportionateScreenWidth(8),
               ),
-              itemBuilder: (context, index) => Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: ColorManager.white,
-                  ),
-                  borderRadius: BorderRadius.circular(
-                    getProportionateScreenHeight(5),
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Icon(
-                  Icons.add_circle_outline_rounded,
-                  color: ColorManager.white,
-                  size: getProportionateScreenHeight(20),
-                ),
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  viewModel.setImageFrom();
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: ColorManager.white,
+                      ),
+                      borderRadius: BorderRadius.circular(
+                        getProportionateScreenHeight(5),
+                      ),
+                    ),
+                    alignment: Alignment.center,
+                    child: viewModel.image == null
+                        ? Icon(
+                            Icons.add_circle_outline_rounded,
+                            color: ColorManager.yellow,
+                            size: getProportionateScreenHeight(20),
+                          )
+                        : Image.memory(base64Decode(viewModel.image!))),
               ),
             ),
             buildVerticleSpace(10),

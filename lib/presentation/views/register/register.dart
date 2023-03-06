@@ -15,20 +15,22 @@ class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
     final viewModel = Provider.of<RegisterViewModel>(context);
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          buildVerticleSpace(194),
-          kText32("WHAT'S YOUR NUMBER?"),
-          buildVerticleSpace(64),
-          Row(
-            children: [
-              _buildCountryCodePicker(viewModel, context),
-              _buildPhoneTextField(viewModel),
-            ],
-          ),
-          buildVerticleSpace(110),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            buildVerticleSpace(194),
+            kText32("WHAT'S YOUR NUMBER?"),
+            buildVerticleSpace(64),
+            Row(
+              children: [
+                _buildCountryCodePicker(viewModel, context),
+                _buildPhoneTextField(viewModel),
+              ],
+            ),
+            buildVerticleSpace(110),
+          ],
+        ),
       ),
       floatingActionButton: CircleButtonWidget(
         onTap: viewModel.phoneNumber.length < 10

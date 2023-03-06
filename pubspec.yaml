@@ -43,6 +43,9 @@ dependencies:
   flutter_pin_code_fields: ^1.2.0
   flutter_holo_date_picker: ^1.1.0
   intl: ^0.18.0
+  image_picker: ^0.8.6+4
+  shared_preferences: ^2.0.18
+  url_launcher: ^6.1.10
   
 dev_dependencies:
   flutter_test:
@@ -67,8 +70,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/
+    - assets/icons/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -23,38 +23,42 @@ class AddInterestView extends StatelessWidget {
             ),
             buildVerticleSpace(50),
             Wrap(
-              spacing: getProportionateScreenWidth(5),
-              runSpacing: getProportionateScreenHeight(9),
-              children: List.generate(
-                viewModel.interests.length,
-                (index) => ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      vertical: getProportionateScreenHeight(20),
-                      horizontal: getProportionateScreenWidth(30),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    minimumSize: const Size(0, 0),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    viewModel.interests[index],
-                    style: TextStyleManager.mediumTextStyle(
-                      fontSize: getProportionateScreenHeight(24),
-                      color: ColorManager.primary,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                spacing: getProportionateScreenWidth(12),
+                runSpacing: getProportionateScreenHeight(9),
+                children: viewModel.interests
+                    .map(
+                      (interest) => InkWell(
+                        onTap: () {
+                          viewModel.selectInterest(interest);
+                        },
+                        child: SizedBox(
+                          child: Chip(
+                            backgroundColor:
+                                viewModel.selectedInterest.contains(interest)
+                                    ? ColorManager.accent
+                                    : null,
+                            label: Text(
+                              interest,
+                              style: TextStyleManager.mediumTextStyle(
+                                fontSize: getProportionateScreenHeight(20),
+                                color: ColorManager.primary,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList()),
           ],
         ),
       ),
-      floatingActionButton: CircleButtonWidget(onTap: () {
-        Get.toNamed(Routes.addInstaNameRoute);
-      }),
+      floatingActionButton: CircleButtonWidget(
+        onTap: viewModel.selectedInterest.length < 3
+            ? null
+            : () {
+                Get.toNamed(Routes.addInstaNameRoute);
+              },
+      ),
     );
   }
 }

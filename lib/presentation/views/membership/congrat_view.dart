@@ -111,12 +111,6 @@ class CongratsView extends StatelessWidget {
                                             getProportionateScreenHeight(32),
                                       ),
                                     ),
-                                    // TextSpan(
-                                    //   text: '  you get a new match',
-                                    //   style: TextStyleManager.regularTextStyle(
-                                    //     fontSize: getProportionateScreenHeight(32),
-                                    //   ),
-                                    // ),
                                   ],
                                 ),
                               )
@@ -125,7 +119,183 @@ class CongratsView extends StatelessWidget {
                                     'say goodbye at anytime if tHE VIBES AREN’T right!',
                                     textAlign: TextAlign.center,
                                   )
-                                : const SizedBox(),
+                                : Container(
+                                    //width: double.infinity,
+                                    color: ColorManager.primary,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        const Spacer(),
+                                        kText28('Membership Options'),
+                                        buildVerticleSpace(
+                                            getProportionateScreenHeight(29)),
+                                        DefaultTabController(
+                                          length: 3,
+                                          child: Container(
+                                            height:
+                                                getProportionateScreenHeight(
+                                                    39),
+                                            width: getProportionateScreenWidth(
+                                                318),
+                                            decoration: BoxDecoration(
+                                              color: ColorManager.white
+                                                  .withOpacity(0.7),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                getProportionateScreenHeight(
+                                                    10),
+                                              ),
+                                            ),
+                                            child: TabBar(
+                                              onTap: (value) {
+                                                viewModel.nextPlan(value);
+                                              },
+                                              labelColor: ColorManager.white,
+                                              unselectedLabelColor:
+                                                  ColorManager.primary,
+                                              unselectedLabelStyle:
+                                                  TextStyleManager
+                                                      .regularTextStyle(
+                                                color: ColorManager.primary,
+                                                fontSize:
+                                                    getProportionateScreenHeight(
+                                                        16),
+                                              ),
+                                              labelStyle: TextStyleManager
+                                                  .boldTextStyle(
+                                                fontSize:
+                                                    getProportionateScreenHeight(
+                                                        16),
+                                              ),
+                                              labelPadding: EdgeInsets.zero,
+                                              indicator: BoxDecoration(
+                                                  border: Border.all(
+                                                      color:
+                                                          ColorManager.primary),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    getProportionateScreenHeight(
+                                                        10),
+                                                  ),
+                                                  color: ColorManager.accent),
+                                              tabs: const [
+                                                Tab(
+                                                  text: 'Monthly',
+                                                ),
+                                                Tab(
+                                                  text: 'Quarterly',
+                                                ),
+                                                Tab(
+                                                  text: 'Annual',
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        buildVerticleSpace(
+                                            getProportionateScreenHeight(43)),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                    '\$${viewModel.subsPrices[viewModel.planIndex]}',
+                                                style: TextStyleManager
+                                                    .regularTextStyle(
+                                                  fontSize:
+                                                      getProportionateScreenHeight(
+                                                          80),
+                                                  color: ColorManager.white,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: ' /MONTH',
+                                                style: TextStyleManager
+                                                    .regularTextStyle(
+                                                  fontSize:
+                                                      getProportionateScreenHeight(
+                                                          14),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        buildVerticleSpace(
+                                            getProportionateScreenHeight(22)),
+                                        kText10(viewModel.planIndex == 0
+                                            ? '(\$${viewModel.subsPrices[viewModel.planIndex]} billed every month)'
+                                            : viewModel.planIndex == 1
+                                                ? '(\$${viewModel.subsPrices[viewModel.planIndex] * 3} billed every month)'
+                                                : '(\$${viewModel.subsPrices[viewModel.planIndex] * 12} billed every month)'),
+                                        buildVerticleSpace(
+                                            getProportionateScreenHeight(41)),
+                                        ElevatedButton(
+                                          // style: ElevatedButton.styleFrom(
+                                          //   backgroundColor: viewModel.notificationAccess == true
+                                          //       ? ColorManager.accent
+                                          //       : ColorManager.secondary,
+                                          // ),
+                                          onPressed: () {
+                                            Get.toNamed(Routes.bottomNavRoute);
+                                          },
+                                          child: kText24('Confirmed'),
+                                        ),
+                                        buildVerticleSpace(
+                                            getProportionateScreenHeight(29)),
+                                        InkWell(
+                                          onTap: () {
+                                            Get.toNamed(
+                                                Routes.verificationCodeRoute);
+                                          },
+                                          child: RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: 'Have a code?',
+                                                  style: TextStyleManager
+                                                      .regularTextStyle(
+                                                    fontSize:
+                                                        getProportionateScreenHeight(
+                                                            12),
+                                                  ),
+                                                ),
+                                                TextSpan(
+                                                  text: 'Enter it here',
+                                                  style: TextStyleManager
+                                                      .regularTextStyle(
+                                                    fontSize:
+                                                        getProportionateScreenHeight(
+                                                            14),
+                                                    color: ColorManager.yellow,
+                                                  ),
+                                                ),
+                                                // TextSpan(
+                                                //   text: '  you get a new match',
+                                                //   style: TextStyleManager.regularTextStyle(
+                                                //     fontSize: getProportionateScreenHeight(32),
+                                                //   ),
+                                                // ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        buildVerticleSpace(
+                                            getProportionateScreenHeight(32)),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal:
+                                                  getProportionateScreenWidth(
+                                                      68)),
+                                          child: kText8(
+                                            'With a subscription you will gain full access to the community, including the ability to meet and chat with other members, for the length of your subscription. if you don’t feel like it’s worth it cancel anytime for free. The subscription will auotmatically renww unless auto-renew is turned off.',
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                        const Spacer()
+                                      ],
+                                    ),
+                                  ),
           ),
           floatingActionButton: CircleButtonWidget(onTap: () {
             // Get.toNamed(Routes.signUpFinalRoute);

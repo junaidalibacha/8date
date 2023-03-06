@@ -12,7 +12,7 @@ class BdayConfirmationView extends StatelessWidget {
     final viewModel = Provider.of<SignUpViewModel>(context);
 
     return Dialog(
-      backgroundColor: ColorManager.lightGrey,
+      backgroundColor: ColorManager.yellow,
       insetPadding: EdgeInsets.symmetric(
         horizontal: getProportionateScreenWidth(15),
       ),
@@ -53,7 +53,7 @@ class BdayConfirmationView extends StatelessWidget {
             buildVerticleSpace(60),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: ColorManager.primary,
+                backgroundColor: ColorManager.accent,
               ),
               onPressed: () {
                 Get.offAndToNamed(Routes.enableNotificationRoute);

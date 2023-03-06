@@ -1,4 +1,10 @@
+import 'package:eight_date_app/presentation/common/bottom_nav.dart';
+import 'package:eight_date_app/presentation/views/User_Profile/edit_user_profile.dart';
+import 'package:eight_date_app/presentation/views/User_Profile/user_profile_view.dart';
+import 'package:eight_date_app/presentation/views/chat_view/chat_view.dart';
+import 'package:eight_date_app/presentation/views/home_page/home_page.dart';
 import 'package:eight_date_app/presentation/views/membership/congrat_view.dart';
+import 'package:eight_date_app/presentation/views/membership/verification_code.dart';
 import 'package:eight_date_app/presentation/views/phone_verification/phone_verification.dart';
 import 'package:eight_date_app/presentation/views/profile/add_bio_view.dart';
 import 'package:eight_date_app/presentation/views/profile/add_insta_name.dart';
@@ -6,6 +12,11 @@ import 'package:eight_date_app/presentation/views/profile/add_interest_view.dart
 import 'package:eight_date_app/presentation/views/profile/add_profile_pic_view.dart';
 import 'package:eight_date_app/presentation/views/profile/final_view.dart';
 import 'package:eight_date_app/presentation/views/profile/under_review.dart';
+import 'package:eight_date_app/presentation/views/settings/chat_bubble.dart';
+import 'package:eight_date_app/presentation/views/settings/notifications_setting.dart';
+import 'package:eight_date_app/presentation/views/settings/prefrences_setting.dart';
+import 'package:eight_date_app/presentation/views/settings/settings_cities.dart';
+import 'package:eight_date_app/presentation/views/settings/settings_view.dart';
 import 'package:eight_date_app/presentation/views/sign_up/components/index.dart';
 import 'package:eight_date_app/presentation/views/sign_up/sign_up_view.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +48,22 @@ class Routes {
 
   // Membership views
   static const String congratsRoute = '/congrats';
+  static const String subscriptionPlanRoute = '/subscriptionPlan';
+  static const String verificationCodeRoute = '/VerificationCode';
+  //home page..
+  static const String homePageRoute = '/HomePage';
+  static const String chatViewRoute = '/chatView';
+  static const String userProfileView = '/editProfileView';
+  //bottom nav
+  static const String bottomNavRoute = '/bottomNavRoute';
+  //edit profile
+  static const String editProfileView = '/editProfileRoute';
+  //settings view
+  static const String settingsView = '/settingsViewRoute';
+  static const String prefrencesView = '/prefrencesViewRoute';
+  static const String notificationSettings = '/notificationViewViewRoute';
+  static const String settingCities = '/settingCities';
+  static const String chatBubble = '/chatBubble';
 }
 
 class RoutesGenerator {
@@ -74,10 +101,38 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const SingUpFinalView());
       case Routes.underReviewRoute:
         return MaterialPageRoute(builder: (_) => const UnderReview());
+      case Routes.editProfileView:
+        return MaterialPageRoute(builder: (_) => const EditProfileView());
 
       // membership
       case Routes.congratsRoute:
         return MaterialPageRoute(builder: (_) => const CongratsView());
+
+      case Routes.verificationCodeRoute:
+        return MaterialPageRoute(builder: (_) => const VerificationCodeView());
+
+      ///home page
+      case Routes.homePageRoute:
+        return MaterialPageRoute(builder: (_) => const HomePage());
+      case Routes.userProfileView:
+        return MaterialPageRoute(builder: (_) => const UserProfileView());
+      case Routes.chatViewRoute:
+        return MaterialPageRoute(builder: (_) => const ChatView());
+      case Routes.bottomNavRoute:
+        return MaterialPageRoute(builder: (_) => const BottomNav());
+      // settings view
+      case Routes.settingsView:
+        return MaterialPageRoute(builder: (_) => const SettingView());
+      case Routes.prefrencesView:
+        return MaterialPageRoute(builder: (_) => const PrefrencesSetting());
+      case Routes.notificationSettings:
+        return MaterialPageRoute(builder: (_) => const NotificationSettings());
+      case Routes.settingCities:
+        return MaterialPageRoute(builder: (_) => const SettingCities());
+
+      case Routes.chatBubble:
+        return MaterialPageRoute(builder: (_) => const ChatBubble());
+      //
     }
     return _unDefinedRoute();
   }

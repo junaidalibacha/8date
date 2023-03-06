@@ -14,7 +14,7 @@ class SplashView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            kText100('8Date'),
+            kText100('zuma'),
             buildVerticleSpace(224),
             ElevatedButton(
               onPressed: () {
@@ -28,7 +28,9 @@ class SplashView extends StatelessWidget {
               children: [
                 kText24('ALREADY A MEMBER?'),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.phoneVerificationRoute);
+                  },
                   child: const Text('LOG IN'),
                 ),
               ],

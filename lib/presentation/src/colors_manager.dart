@@ -18,6 +18,7 @@ class ColorManager {
   static Color grey1 = HexColor.fromHex('#AAAAAA');
   static Color grey2 = HexColor.fromHex('#797979');
   static Color error = HexColor.fromHex('#e61f34'); // red color
+  static Color red = Colors.red; // red color
 }
 
 extension HexColor on Color {

@@ -28,20 +28,26 @@ class SignUpViewModel extends ChangeNotifier {
     'women',
     'other',
   ];
+
+  Set<String> selectedInterest = {};
   final List<String> interests = [
     'travel',
     'golf',
-    'animals',
+    'animal',
     'dance',
-    'travel',
-    'golf',
-    'animals',
-    'dance',
-    'travel',
-    'golf',
-    'animals',
-    'dance',
+    'sports',
+    'gaming',
+    'dating',
+    'food',
   ];
+  void selectInterest(String interest) {
+    if (selectedInterest.contains(interest)) {
+      selectedInterest.remove(interest);
+    } else {
+      selectedInterest.add(interest);
+    }
+    notifyListeners();
+  }
 
   // List<String> get cities => ;
 
