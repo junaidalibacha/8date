@@ -61,7 +61,7 @@ class BdayConfirmationView extends StatelessWidget {
               child: Text(
                 'confirm',
                 style: TextStyleManager.regularTextStyle(
-                  fontSize: getProportionateScreenHeight(14),
+                  fontSize: getProportionateScreenHeight(20),
                 ),
               ),
             ),

@@ -1,5 +1,7 @@
 import 'package:eight_date_app/app/index.dart';
+import 'package:eight_date_app/presentation/common/settings_widget.dart';
 import 'package:eight_date_app/presentation/views/home_page/no_match.dart';
+import 'package:eight_date_app/presentation/views/settings/chat_bubble.dart';
 
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
@@ -20,14 +22,24 @@ class _ChatViewState extends State<ChatView> {
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: const Icon(Icons.arrow_back_ios),
-        ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     Get.back();
+        //   },
+        //   icon: const Icon(Icons.arrow_back_ios),
+        // ),
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            InkWell(
+              onTap: () {
+                Get.back();
+              },
+              child: const Icon(
+                Icons.arrow_back_ios_new_rounded,
+              ),
+            ),
+            buildHorizontalSpace(10),
             CircleAvatar(
               radius: 14,
               backgroundColor: ColorManager.white,
@@ -68,7 +80,7 @@ class _ChatViewState extends State<ChatView> {
                       children: [
                         CircleAvatar(
                           backgroundColor: ColorManager.white,
-                          radius: 80,
+                          radius: getProportionateScreenHeight(80),
                           child: Image.asset('assets/images/chat_profile.png'),
                         ),
                         Positioned(
@@ -118,7 +130,7 @@ class _ChatViewState extends State<ChatView> {
                               : const Color(0XFF6627B7),
                           borderRadius: BorderRadius.circular(16.0),
                         ),
-                        child: Text(message),
+                        child: kText24(message),
                       ),
                     ],
                   ),
@@ -126,78 +138,85 @@ class _ChatViewState extends State<ChatView> {
               },
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    height: getProportionateScreenHeight(60),
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
+          Padding(
+            padding: EdgeInsets.only(bottom: getProportionateScreenHeight(38)),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: getProportionateScreenHeight(60),
+                      decoration: BoxDecoration(
+                        color: const Color(0XFF6C6C6C),
                         borderRadius: BorderRadius.circular(
-                            getProportionateScreenHeight(15))),
-                    child: Center(
-                      child: TextField(
-                        controller: _textController,
-                        textCapitalization: TextCapitalization.words,
-                        style: TextStyleManager.regularTextStyle(
-                          fontSize: getProportionateScreenHeight(24),
+                          getProportionateScreenHeight(15),
                         ),
-                        cursorColor: ColorManager.white,
-                        decoration: InputDecoration(
-                          hintStyle: TextStyleManager.regularTextStyle(
-                            color: ColorManager.white,
+                      ),
+                      child: Center(
+                        child: TextField(
+                          controller: _textController,
+                          textCapitalization: TextCapitalization.words,
+                          style: TextStyleManager.regularTextStyle(
                             fontSize: getProportionateScreenHeight(24),
                           ),
-                          border: InputBorder.none,
-                          enabledBorder: InputBorder
-                              .none, // remove underline when not focused
-                          focusedBorder: InputBorder.none,
-                          hintText: 'Send a message',
+                          cursorColor: ColorManager.white,
+                          decoration: InputDecoration(
+                            hintStyle: TextStyleManager.regularTextStyle(
+                              color: ColorManager.white,
+                              fontSize: getProportionateScreenHeight(24),
+                            ),
+                            border: InputBorder.none,
+                            enabledBorder: InputBorder
+                                .none, // remove underline when not focused
+                            focusedBorder: InputBorder.none,
+                            hintText: 'Send a message',
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(width: getProportionateScreenWidth(11)),
-                InkWell(
-                  onTap: () {
-                    final message = _textController.text.trim();
-                    if (message.isNotEmpty) {
-                      setState(() {
-                        _messages.add(message);
-                      });
-                      _textController.clear();
-
-                      // Generate a dummy response
-                      Future.delayed(const Duration(milliseconds: 500), () {
-                        final response = 'Dummy response to "$message"';
+                  SizedBox(width: getProportionateScreenWidth(11)),
+                  InkWell(
+                    onTap: () {
+                      final message = _textController.text.trim();
+                      if (message.isNotEmpty) {
                         setState(() {
-                          _messages.add(response);
+                          _messages.add(message);
                         });
-                      });
-                    }
-                    _scrollController.animateTo(
-                      _scrollController.position.maxScrollExtent,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeOut,
-                    );
-                  },
-                  child: Container(
-                    height: getProportionateScreenHeight(60),
-                    width: getProportionateScreenWidth(60),
-                    decoration: BoxDecoration(
-                        color: ColorManager.grey,
+                        _textController.clear();
+
+                        // Generate a dummy response
+                        Future.delayed(const Duration(milliseconds: 500), () {
+                          final response = 'Dummy response to "$message"';
+                          setState(() {
+                            _messages.add(response);
+                          });
+                        });
+                      }
+                      _scrollController.animateTo(
+                        _scrollController.position.maxScrollExtent,
+                        duration: const Duration(milliseconds: 200),
+                        curve: Curves.easeOut,
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(getProportionateScreenHeight(17)),
+                      height: getProportionateScreenHeight(60),
+                      width: getProportionateScreenWidth(60),
+                      decoration: BoxDecoration(
+                        color: const Color(0XFF6C6C6C),
                         borderRadius: BorderRadius.circular(
-                            getProportionateScreenHeight(50))),
-                    child: Icon(
-                      Icons.send_rounded,
-                      color: ColorManager.white,
+                          getProportionateScreenHeight(50),
+                        ),
+                      ),
+                      child: Image.asset(
+                        'assets/icons/send_icon.png',
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
@@ -224,51 +243,29 @@ class _ChatViewState extends State<ChatView> {
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
-              InkWell(
-                onTap: () {
+              SettingViewWidget(
+                ontap: () {
                   Get.to(const NoMatch());
                 },
-                child: Column(
-                  children: [
-                    buildVerticleSpace(100),
-                    Image.asset(
-                      AssetsIcons.deleteIcon,
-                      width: getProportionateScreenWidth(50),
-                      height: getProportionateScreenHeight(50),
-                    ),
-                    buildVerticleSpace(10),
-                    kText32('Delete Match')
-                  ],
-                ),
+                iconData: AssetsIcons.deleteIcon,
+                color: ColorManager.accent,
+                title: 'Delete match',
               ),
-              Column(
-                children: [
-                  buildVerticleSpace(100),
-                  Image.asset(
-                    AssetsIcons.reportIcon,
-                    width: getProportionateScreenWidth(50),
-                    height: getProportionateScreenHeight(50),
-                  ),
-                  buildVerticleSpace(10),
-                  kText32('report Match')
-                ],
-              ),
-              InkWell(
-                onTap: () {
-                  Get.toNamed(Routes.chatBubble);
+              SettingViewWidget(
+                ontap: () {
+                  // Get.to(const NoMatch());
                 },
-                child: Column(
-                  children: [
-                    buildVerticleSpace(100),
-                    Image.asset(
-                      AssetsIcons.bubleIcon,
-                      width: getProportionateScreenWidth(50),
-                      height: getProportionateScreenHeight(50),
-                    ),
-                    buildVerticleSpace(10),
-                    kText32('chat bubble')
-                  ],
-                ),
+                iconData: AssetsIcons.reportIcon,
+                color: ColorManager.accent,
+                title: 'report match',
+              ),
+              SettingViewWidget(
+                ontap: () {
+                  Get.to(const ChatBubble());
+                },
+                iconData: AssetsIcons.bubleIcon,
+                color: ColorManager.accent,
+                title: 'chat bubble',
               ),
             ],
           ),

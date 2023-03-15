@@ -12,34 +12,36 @@ class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final viewModel = Provider.of<SignUpViewModel>(context);
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(44),
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: getProportionateScreenWidth(44),
+            ),
+            child: viewModel.bodyList[viewModel.tabIndex],
           ),
-          child: viewModel.bodyList[viewModel.tabIndex],
         ),
-      ),
-      floatingActionButton: CircleButtonWidget(
-        onTap: viewModel.tabIndex == 0
-            ? viewModel.firstName.isEmpty || viewModel.lastName.isEmpty
-                ? null
-                : () => viewModel.next()
-            : viewModel.tabIndex == 1
-                ? viewModel.email.isEmpty
-                    ? null
-                    : () => viewModel.next()
-                : viewModel.age == '0'
-                    ? null
-                    : () {
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return const BdayConfirmationView();
-                          },
-                        );
-                      },
+        floatingActionButton: CircleButtonWidget(
+          onTap: viewModel.tabIndex == 0
+              ? viewModel.firstName.isEmpty || viewModel.lastName.isEmpty
+                  ? null
+                  : () => viewModel.next()
+              : viewModel.tabIndex == 1
+                  ? viewModel.email.isEmpty
+                      ? null
+                      : () => viewModel.next()
+                  : viewModel.age == '0'
+                      ? null
+                      : () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return const BdayConfirmationView();
+                            },
+                          );
+                        },
+        ),
       ),
     );
   }

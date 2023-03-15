@@ -9,8 +9,8 @@ class NoMatch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child:
-              kText60('See you tomorrow at 12pm', textAlign: TextAlign.center)),
+          child: kText60('See you\ntomorrow\nat 12pm',
+              textAlign: TextAlign.center)),
     );
   }
 }

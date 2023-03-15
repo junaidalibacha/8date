@@ -43,12 +43,16 @@ class AddBioView extends StatelessWidget {
                         textInputAction: TextInputAction.done,
                         controller: viewModel.bioTextController,
                         maxLines: 12,
-                        // maxLength: 100,
+                        maxLength: 100,
                         style: TextStyleManager.regularTextStyle(
                           fontSize: getProportionateScreenHeight(32),
                         ),
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(
+                        decoration: InputDecoration(
+                          hintText: 'ENTER tEXT HERE...',
+                          hintStyle: TextStyleManager.mediumTextStyle(
+                              color: ColorManager.grey1,
+                              fontSize: getProportionateScreenHeight(20)),
+                          border: const OutlineInputBorder(
                             borderSide: BorderSide.none,
                           ),
                         ),

@@ -34,8 +34,8 @@ class TextFieldWidget extends StatelessWidget {
 
         hintText: hintText,
         hintStyle: TextStyleManager.regularTextStyle(
-          color: ColorManager.grey,
-          fontSize: getProportionateScreenHeight(40),
+          color: ColorManager.grey1,
+          fontSize: getProportionateScreenHeight(24),
         ),
         // enabledBorder:
       ),

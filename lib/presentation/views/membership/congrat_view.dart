@@ -116,7 +116,7 @@ class CongratsView extends StatelessWidget {
                               )
                             : viewModel.pageIndex == 4
                                 ? kText32(
-                                    'say goodbye at anytime if tHE VIBES AREN’T right!',
+                                    'say goodbye at anytime if\ntHE VIBES AREN’T right!',
                                     textAlign: TextAlign.center,
                                   )
                                 : Container(

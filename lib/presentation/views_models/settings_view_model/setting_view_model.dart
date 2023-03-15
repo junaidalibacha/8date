@@ -2,6 +2,10 @@ import 'package:eight_date_app/app/index.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsViewModel extends ChangeNotifier {
+  bool enableNoti = false;
+  bool reminderNoti = false;
+  bool messageNoti = false;
+
   final List<String> cities = [
     'los angeles',
     'new york',
@@ -58,4 +62,20 @@ class SettingsViewModel extends ChangeNotifier {
       throw 'Could not launch $url';
     }
   }
+
+  void enableNotiTogle(bool value) {
+    enableNoti = value;
+    notifyListeners();
+  }
+
+  void reminderTogle(bool value) {
+    reminderNoti = value;
+    notifyListeners();
+  }
+
+  void msgTogle(bool value) {
+    messageNoti = value;
+    notifyListeners();
+  }
+  //notification settings
 }

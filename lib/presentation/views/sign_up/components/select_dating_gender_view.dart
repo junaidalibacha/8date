@@ -33,7 +33,7 @@ class SelectDatingGenderView extends StatelessWidget {
                     child: RadioButtonWidget(
                       value: viewModel.genders[index],
                       groupValue: viewModel.datingGender,
-                      text: viewModel.genders[index],
+                      text: viewModel.dateGenders[index],
                       onChanged: viewModel.selectDatingGender(),
                     ),
                   ),

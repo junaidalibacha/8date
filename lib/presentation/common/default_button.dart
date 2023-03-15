@@ -32,13 +32,9 @@ class DefaultButton extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(18),
-            color: textColor,
-          ),
-        ),
+        child: Text(text,
+            style: TextStyleManager.mediumTextStyle(
+                color: textColor, fontSize: getProportionateScreenHeight(21))),
       ),
     );
   }

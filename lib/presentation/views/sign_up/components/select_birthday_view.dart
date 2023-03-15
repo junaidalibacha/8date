@@ -36,7 +36,7 @@ class SelectBirthDayView extends StatelessWidget {
                 backgroundColor: Colors.transparent,
                 confirmTextStyle: TextStyleManager.regularTextStyle(
                   fontSize: getProportionateScreenHeight(24),
-                  color: ColorManager.accent,
+                  //   color: ColorManager.accent,
                 ),
                 itemTextStyle: TextStyleManager.regularTextStyle(
                   fontSize: getProportionateScreenHeight(24),

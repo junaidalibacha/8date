@@ -14,8 +14,9 @@ class NameView extends StatelessWidget {
     return Form(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          kText32("WHAT'S YOUR NAME"),
+          Center(child: kText32("WHAT'S YOUR NAME?")),
           buildVerticleSpace(40),
           TextFieldWidget(
             hintText: 'FIRST NAME',
@@ -38,6 +39,14 @@ class NameView extends StatelessWidget {
             },
             onChange: (newValue) => viewModel.onLastNameChange(newValue),
           ),
+          buildVerticleSpace(20),
+          Text(
+            'your last name is always hidden on your profile.',
+            style: TextStyleManager.mediumTextStyle(
+              color: ColorManager.grey,
+              fontSize: getProportionateScreenHeight(12),
+            ),
+          )
         ],
       ),
     );

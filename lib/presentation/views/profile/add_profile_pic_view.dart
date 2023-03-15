@@ -23,36 +23,38 @@ class AddProfilePicView extends StatelessWidget {
             buildVerticleSpace(100),
             kText40('add profile pictures'),
             buildVerticleSpace(28),
-            GridView.builder(
-              itemCount: 6,
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: getProportionateScreenHeight(0.95),
-                mainAxisSpacing: getProportionateScreenHeight(8),
-                crossAxisSpacing: getProportionateScreenWidth(8),
-              ),
-              itemBuilder: (context, index) => InkWell(
-                onTap: () {
-                  viewModel.setImageFrom();
-                },
-                child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: ColorManager.white,
+            Center(
+              child: GridView.builder(
+                itemCount: 5,
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  childAspectRatio: getProportionateScreenHeight(0.75),
+                  mainAxisSpacing: getProportionateScreenHeight(8),
+                  crossAxisSpacing: getProportionateScreenWidth(8),
+                ),
+                itemBuilder: (context, index) => InkWell(
+                  onTap: () {
+                    viewModel.setImageFrom();
+                  },
+                  child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: ColorManager.white,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          getProportionateScreenHeight(5),
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(
-                        getProportionateScreenHeight(5),
-                      ),
-                    ),
-                    alignment: Alignment.center,
-                    child: viewModel.image == null
-                        ? Icon(
-                            Icons.add_circle_outline_rounded,
-                            color: ColorManager.yellow,
-                            size: getProportionateScreenHeight(20),
-                          )
-                        : Image.memory(base64Decode(viewModel.image!))),
+                      alignment: Alignment.center,
+                      child: viewModel.image == null
+                          ? Icon(
+                              Icons.add_circle_outline_rounded,
+                              color: ColorManager.yellow,
+                              size: getProportionateScreenHeight(20),
+                            )
+                          : Image.memory(base64Decode(viewModel.image!))),
+                ),
               ),
             ),
             buildVerticleSpace(10),

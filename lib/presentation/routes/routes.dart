@@ -37,6 +37,7 @@ class Routes {
   static const String selectCityRoute = '/selectCity';
   static const String selectGenderRoute = '/selectGender';
   static const String selectDatingGenderRoute = '/selectDatingGender';
+  static const String selectBirthDayView = '/SelectBirthDayRoute';
 
   // SignUp profile views
   static const String addProfilePicRoute = '/addProfilePic';
@@ -103,6 +104,8 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const UnderReview());
       case Routes.editProfileView:
         return MaterialPageRoute(builder: (_) => const EditProfileView());
+      case Routes.selectBirthDayView:
+        return MaterialPageRoute(builder: (_) => const SelectBirthDayView());
 
       // membership
       case Routes.congratsRoute:

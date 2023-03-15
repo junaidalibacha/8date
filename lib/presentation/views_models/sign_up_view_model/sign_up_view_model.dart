@@ -12,6 +12,7 @@ class SignUpViewModel extends ChangeNotifier {
   var firstName = '';
   var lastName = '';
   var email = '';
+  bool radioValue = false;
 
   DateTime birthDay = DateTime.now();
   bool? notificationAccess;
@@ -25,6 +26,11 @@ class SignUpViewModel extends ChangeNotifier {
   ];
   final List<String> genders = [
     'man',
+    'woman',
+    'other',
+  ];
+  final List<String> dateGenders = [
+    'men',
     'women',
     'other',
   ];
@@ -116,6 +122,11 @@ class SignUpViewModel extends ChangeNotifier {
 
   void getNotiAccess(bool value) {
     notificationAccess = value;
+    notifyListeners();
+  }
+
+  void handleRadioValueChange() {
+    radioValue = !radioValue;
     notifyListeners();
   }
 }

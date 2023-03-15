@@ -161,7 +161,7 @@ class UserProfileView extends StatelessWidget {
                   backgroundColor: ColorManager.grey,
                   foregroundColor: ColorManager.grey1,
                   text: 'Settings',
-                  textColor: Colors.black,
+                  textColor: ColorManager.white,
                   press: () {
                     Get.toNamed(Routes.settingsView);
                   },

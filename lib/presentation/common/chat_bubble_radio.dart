@@ -21,8 +21,9 @@ class ChatBubbleRadioWidget<T> extends StatelessWidget {
     final bool isSelected = value == groupValue;
 
     return Container(
-      width: getProportionateScreenHeight(45),
-      height: getProportionateScreenHeight(45),
+      padding: EdgeInsets.all(getProportionateScreenHeight(10)),
+      width: getProportionateScreenHeight(40),
+      height: getProportionateScreenHeight(40),
       decoration: ShapeDecoration(
         shape: CircleBorder(
           side: BorderSide(
@@ -31,6 +32,19 @@ class ChatBubbleRadioWidget<T> extends StatelessWidget {
           ),
         ),
         color: selectedColor,
+      ),
+      child: Visibility(
+        visible: isSelected,
+        child: CircleAvatar(
+          radius: getProportionateScreenHeight(10),
+          backgroundColor: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.all(getProportionateScreenHeight(2)),
+            child: const CircleAvatar(
+              backgroundColor: Colors.black,
+            ),
+          ),
+        ),
       ),
     );
   }

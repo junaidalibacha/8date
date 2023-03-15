@@ -24,23 +24,26 @@ class BottomNav extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             label: '',
-            icon: Icon(
-              Icons.person,
-              color: ColorManager.yellow,
-            ),
-          ),
-          const BottomNavigationBarItem(
-            label: '',
-            icon: Icon(
-              Icons.favorite_rounded,
-              color: Colors.red,
+            icon: Image.asset(
+              'assets/icons/person_icon.png',
+              height: getProportionateScreenHeight(21),
+              width: getProportionateScreenWidth(21),
             ),
           ),
           BottomNavigationBarItem(
             label: '',
-            icon: Icon(
-              Icons.chat_bubble_rounded,
-              color: ColorManager.accent,
+            icon: Image.asset(
+              'assets/icons/heart_icon.png',
+              height: getProportionateScreenHeight(21),
+              width: getProportionateScreenWidth(21),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Image.asset(
+              'assets/icons/message_icon.png',
+              height: getProportionateScreenHeight(21),
+              width: getProportionateScreenWidth(21),
             ),
           ),
         ],

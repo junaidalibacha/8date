@@ -1,15 +1,15 @@
 import '../../app/index.dart';
 
 class SettingViewWidget extends StatelessWidget {
-  IconData? iconData;
-  Color? color;
-  String? title;
-  VoidCallback? ontap;
+  String iconData;
+  Color color;
+  String title;
+  VoidCallback ontap;
   SettingViewWidget({
-    this.color,
-    this.ontap,
-    this.iconData,
-    this.title,
+    required this.color,
+    required this.ontap,
+    required this.iconData,
+    required this.title,
     super.key,
   });
 
@@ -22,10 +22,10 @@ class SettingViewWidget extends StatelessWidget {
       child: Column(
         children: [
           buildVerticleSpace(100),
-          Icon(
+          Image.asset(
             iconData,
-            color: color,
-            size: 60,
+            height: getProportionateScreenHeight(55),
+            width: getProportionateScreenWidth(55),
           ),
           buildVerticleSpace(21),
           kText28(title.toString()),

@@ -26,15 +26,15 @@ class SettingView extends StatelessWidget {
               ontap: () {
                 Get.toNamed(Routes.prefrencesView);
               },
-              iconData: Icons.favorite_rounded,
+              iconData: 'assets/icons/heart_icon2.png',
               color: ColorManager.red,
-              title: 'dating prefrences',
+              title: 'dating Preferences',
             ),
             SettingViewWidget(
               ontap: () {
                 Get.toNamed(Routes.notificationSettings);
               },
-              iconData: Icons.notifications,
+              iconData: 'assets/icons/noti_icon.png',
               color: ColorManager.yellow,
               title: 'Notifications',
             ),
@@ -42,7 +42,7 @@ class SettingView extends StatelessWidget {
               ontap: () {
                 viewModel.launchEmail();
               },
-              iconData: Icons.email,
+              iconData: 'assets/icons/mail_icon.png',
               color: ColorManager.accent,
               title: 'Contact us',
             ),
