@@ -51,8 +51,9 @@ class RegisterViewModel extends ChangeNotifier {
     print(sentOTP);
 
     twilioFlutter.sendSMS(
-        toNumber: phonoNoController.text,
+        toNumber: countryCode.toString() + phonoNoController.text,
         messageBody: 'Hello This is 6 digit otp code to verify phone $digits');
+    print(countryCode.toString() + phonoNoController.text);
     Get.to(PhoneVarificationView(
       otp: sentOTP,
     ));
