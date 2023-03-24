@@ -4,7 +4,6 @@ import 'package:eight_date_app/presentation/views/User_Profile/user_profile_view
 import 'package:eight_date_app/presentation/views/chat_view/chat_view.dart';
 import 'package:eight_date_app/presentation/views/home_page/home_page.dart';
 import 'package:eight_date_app/presentation/views/membership/congrat_view.dart';
-import 'package:eight_date_app/presentation/views/membership/verification_code.dart';
 import 'package:eight_date_app/presentation/views/phone_verification/phone_verification.dart';
 import 'package:eight_date_app/presentation/views/profile/add_bio_view.dart';
 import 'package:eight_date_app/presentation/views/profile/add_insta_name.dart';
@@ -12,7 +11,7 @@ import 'package:eight_date_app/presentation/views/profile/add_interest_view.dart
 import 'package:eight_date_app/presentation/views/profile/add_profile_pic_view.dart';
 import 'package:eight_date_app/presentation/views/profile/final_view.dart';
 import 'package:eight_date_app/presentation/views/profile/under_review.dart';
-import 'package:eight_date_app/presentation/views/settings/chat_bubble.dart';
+// import 'package:eight_date_app/presentation/views/settings/chat_bubble.dart';
 import 'package:eight_date_app/presentation/views/settings/notifications_setting.dart';
 import 'package:eight_date_app/presentation/views/settings/prefrences_setting.dart';
 import 'package:eight_date_app/presentation/views/settings/settings_cities.dart';
@@ -74,8 +73,8 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.registerRoute:
         return MaterialPageRoute(builder: (_) => const RegisterView());
-      case Routes.phoneVerificationRoute:
-        return MaterialPageRoute(builder: (_) => const PhoneVarificationView());
+      // case Routes.phoneVerificationRoute:
+      //   return MaterialPageRoute(builder: (_) => const PhoneVarificationView());
       case Routes.signUpRoute:
         return MaterialPageRoute(builder: (_) => const SignUpView());
       case Routes.enableNotificationRoute:
@@ -112,7 +111,8 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const CongratsView());
 
       case Routes.verificationCodeRoute:
-        return MaterialPageRoute(builder: (_) => const VerificationCodeView());
+        return MaterialPageRoute(
+            builder: (_) => PhoneVarificationView(otp: ''));
 
       ///home page
       case Routes.homePageRoute:
@@ -133,8 +133,8 @@ class RoutesGenerator {
       case Routes.settingCities:
         return MaterialPageRoute(builder: (_) => const SettingCities());
 
-      case Routes.chatBubble:
-        return MaterialPageRoute(builder: (_) => const ChatBubble());
+      // case Routes.chatBubble:
+      //   return MaterialPageRoute(builder: (_) => const ChatBubble());
       //
     }
     return _unDefinedRoute();

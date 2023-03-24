@@ -36,7 +36,7 @@ class RegisterView extends StatelessWidget {
         onTap: viewModel.phoneNumber.length < 10
             ? null
             : () {
-                Get.toNamed(Routes.phoneVerificationRoute);
+                viewModel.sendSMS();
               },
       ),
     );
@@ -56,6 +56,7 @@ class RegisterView extends StatelessWidget {
           ),
         ),
         child: TextFormField(
+          controller: viewModel.phonoNoController,
           keyboardType: TextInputType.number,
           textInputAction: TextInputAction.done,
           maxLines: 1,

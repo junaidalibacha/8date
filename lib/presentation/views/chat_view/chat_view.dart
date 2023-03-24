@@ -1,7 +1,7 @@
 import 'package:eight_date_app/app/index.dart';
 import 'package:eight_date_app/presentation/common/settings_widget.dart';
 import 'package:eight_date_app/presentation/views/home_page/no_match.dart';
-import 'package:eight_date_app/presentation/views/settings/chat_bubble.dart';
+// import 'package:eight_date_app/presentation/views/settings/chat_bubble.dart';
 
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
@@ -261,7 +261,7 @@ class _ChatViewState extends State<ChatView> {
               ),
               SettingViewWidget(
                 ontap: () {
-                  Get.to(const ChatBubble());
+                  //  Get.to(const ChatBubble());
                 },
                 iconData: AssetsIcons.bubleIcon,
                 color: ColorManager.accent,

@@ -4,7 +4,11 @@ import 'package:eight_date_app/presentation/views_models/phone_verification_view
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 
 class PhoneVarificationView extends StatelessWidget {
-  const PhoneVarificationView({super.key});
+  var otp;
+  PhoneVarificationView({
+    this.otp,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,7 @@ class PhoneVarificationView extends StatelessWidget {
                   horizontal: getProportionateScreenWidth(8),
                 ),
                 length: 6,
-                controller: newTextEditingController,
+                controller: viewModel.otpController,
                 focusNode: focusNode,
                 autoHideKeyboard: false,
                 keyboardType: TextInputType.number,
@@ -49,7 +53,7 @@ class PhoneVarificationView extends StatelessWidget {
         onTap: viewModel.code == null
             ? null
             : () {
-                Get.toNamed(Routes.signUpRoute);
+                viewModel.verifyOTP(otp);
               },
       ),
     );
